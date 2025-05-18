@@ -5,9 +5,24 @@ let todos=[
     {title: "Understanding the array",done: true},
 ]
 
-todos.forEach((todo)=>{
-    console.log(`Title: ${todo.title} is done : ${todo.done}`);
+let doneTodos=[]
+let onGoingTodos=[]
 
+todos.forEach((todo)=>{
+    if(todo.done){
+        doneTodos.push(todo);
+    }else{
+       onGoingTodos.push(todo);
+    }
 })
 
-    
+
+console.log("✅ Done Todos: ");
+doneTodos.forEach((todo)=>{
+    console.log(`- ${todo.title}`);
+})
+
+console.log("\n⏳ On Going Todos: ");
+onGoingTodos.forEach((todo)=>{
+    console.log(`- ${todo.title}`);
+})
